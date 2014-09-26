@@ -39,6 +39,14 @@
 - (NSURLSessionDataTask *)subredditWithName:(NSString *)subredditName completion:(RKObjectCompletionBlock)completion;
 
 /**
+ Gets a list of the default subreddits.
+ 
+ @param pagination The pagination object to be sent with the request.
+ @param completion An optional block to be executed on the completion of a request. Its collection parameter contains RKSubreddit objects.
+ */
+- (NSURLSessionDataTask *)defaultSubredditsWithPagination:(RKPagination *)pagination completion:(RKListingCompletionBlock)completion;
+
+/**
  Gets a list of the most popular subreddits.
  
  @param pagination The pagination object to be sent with the request.

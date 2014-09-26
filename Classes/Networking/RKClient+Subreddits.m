@@ -62,6 +62,11 @@
     }];
 }
 
+- (NSURLSessionDataTask *)defaultSubredditsWithPagination:(RKPagination *)pagination completion:(RKListingCompletionBlock)completion
+{
+    return [self listingTaskWithPath:@"subreddits.json" parameters:nil pagination:pagination completion:completion];
+}
+
 - (NSURLSessionDataTask *)popularSubredditsWithPagination:(RKPagination *)pagination completion:(RKListingCompletionBlock)completion
 {
     return [self listingTaskWithPath:@"subreddits/popular.json" parameters:nil pagination:pagination completion:completion];
