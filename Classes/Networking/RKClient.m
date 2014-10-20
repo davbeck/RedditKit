@@ -47,9 +47,13 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
     return sharedRKClient;
 }
 
-- (id)init
+- (id)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
-    if (self = [super initWithBaseURL:[[self class] APIBaseURL]])
+    if (url == nil) {
+        url = [[self class] APIBaseURL];
+    }
+    
+    if (self = [super initWithBaseURL:url sessionConfiguration:configuration])
     {
         self.requestSerializer = [AFHTTPRequestSerializer serializer];
         self.responseSerializer = [RKResponseSerializer serializer];
