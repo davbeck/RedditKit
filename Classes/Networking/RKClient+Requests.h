@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import "RKClient.h"
-#import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 typedef void(^RKRequestCompletionBlock)(NSHTTPURLResponse *response, id responseObject, NSError *error);
 
